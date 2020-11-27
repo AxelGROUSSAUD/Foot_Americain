@@ -18,7 +18,7 @@
                 <RowDefinition Height="15*"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="Equipes : " HorizontalAlignment="Center"/>
-            <ListBox x:Name="ListEquipes" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <ListBox x:Name="ListEquipes" ItemsSource="{Binding ListEquipes}" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </Grid>
         <Grid Name="Joueurs" Grid.Column="1">
             <Grid.RowDefinitions>

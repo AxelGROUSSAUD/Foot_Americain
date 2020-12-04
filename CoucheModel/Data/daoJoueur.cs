@@ -54,5 +54,19 @@ namespace CoucheModel.Data
 
             return listJoueur;
         }
+
+        public List<Joueur> SelectAllByEquipe(Equipe theEquipe)
+        {
+            List<Joueur> listJoueur = new List<Joueur>();
+            string condition = theEquipe.Id + "= Joueur.equipe ;";
+            DataTable unDataTable =thedbal.SelectByField("Joueur", condition);
+            foreach (DataRow r in unDataTable.Rows)
+            {
+                Pays myPays = this.theDaoPays.SelectById((int)r["id"]);
+                Poste myPoste = this.theDaoPoste.SelectById((int)r["id"]);
+                listJoueur.Add(new Joueur((int)r["id"], (string)r["nom"], (DateTime)r["dateNaissance"], (DateTime)r["dateEntree"], myPays, myPoste));
+            }
+            return listJoueur;
+        }
     }
 }

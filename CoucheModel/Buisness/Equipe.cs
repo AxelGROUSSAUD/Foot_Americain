@@ -38,5 +38,10 @@ namespace CoucheModel.Buisness
 
         public List<Joueur> MesJoueurs => _mesJoueurs;
 
+        public override string ToString()
+        {
+            return this.Nom;
+        }
+
     }
 }

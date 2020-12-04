@@ -48,5 +48,10 @@ namespace CoucheModel.Buisness
         public Pays Pays { get => _pays; set => _pays = value; }
 
         public Poste Poste { get => _poste; set => _poste = value; }
+
+        public override string ToString()
+        {
+            return this.Nom;
+        }
     }
 }

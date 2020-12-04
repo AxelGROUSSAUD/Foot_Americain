@@ -31,5 +31,10 @@ namespace CoucheModel.Buisness
         public string Nom { get => _nom; set => _nom = value; }
 
         public int Escouade { get => _escouade; set => _escouade = value; }
+
+        public override string ToString()
+        {
+            return this.Escouade.ToString()+"------->"+this.Nom;
+        }
     }
 }
